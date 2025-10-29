@@ -1,20 +1,27 @@
 [
   {
-    "id": "canva-pro-1month",
-    "title": "Canva Pro — 1 Bulan",
-    "price": "Rp4.000",
-    "short": "Akses Canva Pro 1 bulan — siap pakai",
-    "category": "Desain",
-    "desc": "Lisensi Canva Pro 1 bulan. Panduan & garansi 7 hari.",
-    "wa": "+6289601570287"
+    "id": 1,
+    "name": "Canva Pro",
+    "options": [
+      { "name": "1 Bulan", "desc": "Akses semua fitur Pro", "price": 4000 },
+      { "name": "3 Bulan", "desc": "Lebih hemat 15%", "price": 6000 },
+      { "name": "1 Tahun", "desc": "Full akses 12 bulan", "price": 10000 }
+    ]
   },
   {
-    "id": "capcut-pro-1month",
-    "title": "CapCut Pro — 1 Bulan",
-    "price": "Rp8.000",
-    "short": "CapCut Pro private 1 bulan",
-    "category": "Video",
-    "desc": "Akun CapCut Pro 1 bulan. Garansi jika bermasalah.",
-    "wa": "+6289601570287"
+    "id": 2,
+    "name": "CapCut Pro",
+    "options": [
+      { "name": "7 Hari", "desc": "Trial versi Pro", "price": 8000 },
+      { "name": "1 Bulan", "desc": "Full fitur Pro", "price": 15500 }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Netflix Premium",
+    "options": [
+      { "name": "1 Bulan", "desc": "Akun private 4K", "price": 15000 },
+      { "name": "3 Bulan", "desc": "Langganan hemat", "price": 40000 }
+    ]
   }
 ]
