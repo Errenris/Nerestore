@@ -7,12 +7,19 @@ export default function Home() {
     <div>
       <Head>
         <title>Nerestore — Digital Store</title>
-        <meta name='description' content='Nerestore: Jual produk digital seperti Canva Pro, CapCut Pro, Netflix, dan lainnya.' />
+        <meta
+          name='description'
+          content='Nerestore: Jual produk digital seperti Canva Pro, CapCut Pro, Netflix, dan lainnya.'
+        />
       </Head>
 
-      <header className='bg-sky-600 text-white p-6'>
+      <header className='bg-sky-600 text-white p-6 relative overflow-hidden'>
         <div className='container mx-auto flex items-center justify-between'>
-          <h1 className='text-2xl font-bold'>Nerestore</h1>
+          {/* ======= GLITCH TEXT ======= */}
+          <h1 className='glitch-text text-2xl font-bold' data-text='Nerestore'>
+            Nerestore
+          </h1>
+
           <nav className='space-x-4 text-sm'>
             <a href='#produk'>Produk</a>
             <a href='#promo'>Promo</a>
@@ -23,7 +30,9 @@ export default function Home() {
 
       <main className='container mx-auto p-6'>
         <section id='produk' className='grid grid-cols-1 md:grid-cols-3 gap-4'>
-          {products.map(p => <ProductCard key={p.id} p={p} />)}
+          {products.map((p) => (
+            <ProductCard key={p.id} p={p} />
+          ))}
         </section>
 
         <section id='promo' className='mt-10'>
