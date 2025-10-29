@@ -1,0 +1,20 @@
+[
+  {
+    "id": "canva-pro-1month",
+    "title": "Canva Pro — 1 Bulan",
+    "price": "Rp4.000",
+    "short": "Akses Canva Pro 1 bulan — siap pakai",
+    "category": "Desain",
+    "desc": "Lisensi Canva Pro 1 bulan. Panduan & garansi 7 hari.",
+    "wa": "+6289601570287"
+  },
+  {
+    "id": "capcut-pro-1month",
+    "title": "CapCut Pro — 1 Bulan",
+    "price": "Rp8.000",
+    "short": "CapCut Pro private 1 bulan",
+    "category": "Video",
+    "desc": "Akun CapCut Pro 1 bulan. Garansi jika bermasalah.",
+    "wa": "+6289601570287"
+  }
+]
