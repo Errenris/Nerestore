@@ -6,3 +6,61 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* ====== GLITCH EFFECT FOR NERERESTORE ====== */
+.glitch-text {
+  position: relative;
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  animation: glitch 1s infinite;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.8;
+}
+
+.glitch-text::before {
+  left: 2px;
+  text-shadow: -2px 0 red;
+  animation: glitchTop 1s infinite;
+}
+
+.glitch-text::after {
+  left: -2px;
+  text-shadow: 2px 0 cyan;
+  animation: glitchBottom 1s infinite;
+}
+
+@keyframes glitch {
+  0% { transform: none; }
+  20% { transform: skew(0.5deg, 0.5deg); }
+  40% { transform: skew(-0.5deg, -0.5deg); }
+  60% { transform: skew(0.5deg, 0.5deg); }
+  80% { transform: skew(-0.5deg, -0.5deg); }
+  100% { transform: none; }
+}
+
+@keyframes glitchTop {
+  0% { clip-path: inset(0 0 80% 0); transform: translate(-2px, -2px); }
+  20% { clip-path: inset(0 0 70% 0); transform: translate(2px, 2px); }
+  40% { clip-path: inset(0 0 60% 0); transform: translate(-1px, 1px); }
+  60% { clip-path: inset(0 0 50% 0); transform: translate(1px, -1px); }
+  80% { clip-path: inset(0 0 80% 0); transform: translate(-2px, 1px); }
+  100% { clip-path: inset(0 0 80% 0); transform: translate(0); }
+}
+
+@keyframes glitchBottom {
+  0% { clip-path: inset(80% 0 0 0); transform: translate(2px, 2px); }
+  20% { clip-path: inset(70% 0 0 0); transform: translate(-1px, -1px); }
+  40% { clip-path: inset(60% 0 0 0); transform: translate(1px, 1px); }
+  60% { clip-path: inset(50% 0 0 0); transform: translate(-2px, 2px); }
+  80% { clip-path: inset(80% 0 0 0); transform: translate(2px, -1px); }
+  100% { clip-path: inset(80% 0 0 0); transform: translate(0); }
+}
