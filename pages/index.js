@@ -6,34 +6,41 @@ export default function Home() {
   const [openProduct, setOpenProduct] = useState(null)
 
   return (
-    <div className='min-h-screen bg-gradient-to-br from-sky-50 to-white text-gray-800'>
+    <div className='min-h-screen bg-gradient-to-br from-black via-gray-900 to-red-900 text-gray-100 relative overflow-hidden'>
       <Head>
-        <title>Nerestore — Digital Store</title>
+        <title>Nerestore ⚡ Digital Store</title>
         <meta
           name='description'
           content='Nerestore: Jual produk digital seperti Canva Pro, CapCut Pro, Netflix, dan lainnya.'
         />
       </Head>
 
+      {/* ===== PETIR BACKGROUND ===== */}
+      <div className='absolute inset-0 overflow-hidden pointer-events-none'>
+        <div className='lightning'></div>
+        <div className='lightning delay-1'></div>
+        <div className='lightning delay-2'></div>
+      </div>
+
       {/* ===== HEADER ===== */}
-      <header className='backdrop-blur-md bg-sky-600/90 text-white sticky top-0 z-50 shadow-md'>
+      <header className='backdrop-blur-md bg-black/40 text-white sticky top-0 z-50 shadow-lg border-b border-red-800'>
         <div className='container mx-auto flex items-center justify-between p-5'>
-          <h1 className='text-3xl font-extrabold tracking-wide'>
+          <h1 className='text-4xl font-extrabold tracking-wide relative'>
             <span
-              className='bg-gradient-to-r from-white to-sky-200 text-transparent bg-clip-text glitch-text'
+              className='glitch-text text-red-500'
               data-text='NERESTORE'
             >
               NERESTORE
             </span>
           </h1>
           <nav className='space-x-6 text-sm font-medium'>
-            <a href='#produk' className='hover:text-sky-200 transition'>
+            <a href='#produk' className='hover:text-red-400 transition'>
               Produk
             </a>
-            <a href='#promo' className='hover:text-sky-200 transition'>
+            <a href='#promo' className='hover:text-red-400 transition'>
               Promo
             </a>
-            <a href='#tentang' className='hover:text-sky-200 transition'>
+            <a href='#tentang' className='hover:text-red-400 transition'>
               Tentang
             </a>
           </nav>
@@ -41,44 +48,44 @@ export default function Home() {
       </header>
 
       {/* ===== MAIN CONTENT ===== */}
-      <main className='container mx-auto px-5 py-10'>
+      <main className='container mx-auto px-5 py-10 relative z-10'>
         {/* ==== PRODUK ==== */}
         <section id='produk'>
-          <h2 className='text-2xl font-bold mb-6 text-sky-700 flex items-center gap-2'>
-            🛍️ Produk Kami
+          <h2 className='text-2xl font-bold mb-6 text-red-400 flex items-center gap-2'>
+            ⚡ Produk Kami
           </h2>
 
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
             {products.map((p) => (
               <div
                 key={p.id}
-                className='rounded-2xl border border-sky-100 bg-white shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 p-5'
+                className='rounded-2xl border border-red-800 bg-black/60 shadow-lg hover:shadow-red-700/50 hover:-translate-y-1 transition-all duration-300 p-5'
               >
                 <button
                   onClick={() => setOpenProduct(openProduct === p.id ? null : p.id)}
-                  className='w-full text-left text-lg font-semibold text-sky-700 flex justify-between items-center'
+                  className='w-full text-left text-lg font-semibold text-red-400 flex justify-between items-center'
                 >
                   {p.name}
-                  <span className='text-sky-500'>
+                  <span className='text-gray-300'>
                     {openProduct === p.id ? '▲' : '▼'}
                   </span>
                 </button>
 
                 {openProduct === p.id && (
-                  <div className='mt-4 border-t pt-3 space-y-3 animate-fadeIn'>
+                  <div className='mt-4 border-t border-red-700 pt-3 space-y-3 animate-fadeIn'>
                     {p.options.map((opt, i) => (
                       <div
                         key={i}
-                        className='flex justify-between items-center border border-sky-100 rounded-lg p-3 hover:bg-sky-50 transition-all'
+                        className='flex justify-between items-center border border-red-900 rounded-lg p-3 hover:bg-red-900/20 transition-all'
                       >
                         <div>
-                          <p className='font-medium text-gray-800'>{opt.name}</p>
-                          <p className='text-sm text-gray-500'>{opt.desc}</p>
+                          <p className='font-medium text-gray-100'>{opt.name}</p>
+                          <p className='text-sm text-gray-400'>{opt.desc}</p>
                         </div>
                         <a
                           href={`https://wa.me/6289601570287?text=Halo!%20Saya%20ingin%20pesan%20${p.name}%20(${opt.name})`}
                           target='_blank'
-                          className='bg-sky-600 text-white text-sm px-4 py-1.5 rounded-lg hover:bg-sky-700 shadow-sm'
+                          className='bg-red-600 text-white text-sm px-4 py-1.5 rounded-lg hover:bg-red-700 shadow'
                         >
                           Beli
                         </a>
@@ -93,8 +100,8 @@ export default function Home() {
 
         {/* ==== PROMO ==== */}
         <section id='promo' className='mt-16'>
-          <h2 className='text-2xl font-bold text-sky-700 mb-3'>🔥 Promo Spesial</h2>
-          <div className='p-5 rounded-xl bg-gradient-to-r from-sky-500 to-blue-500 text-white font-semibold text-center shadow'>
+          <h2 className='text-2xl font-bold text-red-400 mb-3'>🔥 Promo Spesial</h2>
+          <div className='p-5 rounded-xl bg-gradient-to-r from-red-600 to-orange-600 text-white font-semibold text-center shadow-lg'>
             💥 Harga mulai <span className='text-yellow-300'>Rp4.000</span>!  
             Buruan sebelum kehabisan!
           </div>
@@ -102,8 +109,8 @@ export default function Home() {
 
         {/* ==== TENTANG ==== */}
         <section id='tentang' className='mt-16'>
-          <h2 className='text-2xl font-bold text-sky-700 mb-3'>Tentang Nerestore</h2>
-          <p className='text-gray-700 leading-relaxed'>
+          <h2 className='text-2xl font-bold text-red-400 mb-3'>Tentang Nerestore</h2>
+          <p className='text-gray-300 leading-relaxed'>
             <b>Nerestore</b> menjual produk digital seperti Canva, CapCut, Netflix, dan lainnya.
             Semua produk bergaransi dan disertai panduan lengkap agar pembeli nyaman & aman.
           </p>
@@ -111,17 +118,17 @@ export default function Home() {
       </main>
 
       {/* ===== FOOTER ===== */}
-      <footer className='bg-sky-600/90 text-white text-center py-6 mt-16'>
+      <footer className='bg-black/70 text-gray-400 text-center py-6 mt-16 border-t border-red-800'>
         <p>
-          © {new Date().getFullYear()} <b>Nerestore</b> — Hubungi admin via WhatsApp untuk pemesanan.
+          © {new Date().getFullYear()} <b className='text-red-500'>Nerestore</b> — Hubungi admin via WhatsApp untuk pemesanan.
         </p>
         <p className='mt-3'>
-          🔗{' '}
+          ⚡{' '}
           <a
             href='https://linktr.ee/nerestore.com'
             target='_blank'
             rel='noreferrer'
-            className='text-yellow-200 hover:text-white font-medium underline'
+            className='text-red-400 hover:text-white font-medium underline'
           >
             Akses Gratis / Free Tools di sini
           </a>
@@ -130,21 +137,17 @@ export default function Home() {
 
       <style jsx global>{`
         @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(5px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          from { opacity: 0; transform: translateY(5px); }
+          to { opacity: 1; transform: translateY(0); }
         }
-        .animate-fadeIn {
-          animation: fadeIn 0.3s ease-in-out;
-        }
+        .animate-fadeIn { animation: fadeIn 0.3s ease-in-out; }
+
+        /* Efek glitch merah */
         .glitch-text {
           position: relative;
           display: inline-block;
+          text-shadow: 0 0 5px red, 0 0 20px crimson;
+          animation: pulse 2s infinite alternate;
         }
         .glitch-text::before,
         .glitch-text::after {
@@ -152,16 +155,14 @@ export default function Home() {
           position: absolute;
           left: 0;
           top: 0;
-          color: white;
+          color: red;
           overflow: hidden;
           clip: rect(0, 900px, 0, 0);
           animation: glitch 2s infinite linear alternate-reverse;
         }
-        .glitch-text::before {
-          text-shadow: -2px 0 red;
-        }
         .glitch-text::after {
-          text-shadow: 2px 0 blue;
+          color: #ff0000;
+          text-shadow: 2px 0 #ff3333;
         }
         @keyframes glitch {
           0% { clip: rect(42px, 9999px, 44px, 0); }
@@ -170,6 +171,33 @@ export default function Home() {
           60% { clip: rect(24px, 9999px, 28px, 0); }
           80% { clip: rect(64px, 9999px, 68px, 0); }
           100% { clip: rect(12px, 9999px, 16px, 0); }
+        }
+
+        @keyframes pulse {
+          from { filter: brightness(1); }
+          to { filter: brightness(1.8); }
+        }
+
+        /* Efek PETIR */
+        .lightning {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+          opacity: 0;
+          animation: flash 6s infinite;
+        }
+        .delay-1 { animation-delay: 2s; }
+        .delay-2 { animation-delay: 4s; }
+
+        @keyframes flash {
+          0%, 95%, 100% { opacity: 0; }
+          96% { opacity: 1; }
+          97% { opacity: 0.6; }
+          98% { opacity: 0; }
+          99% { opacity: 0.8; }
         }
       `}</style>
     </div>
