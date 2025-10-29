@@ -136,70 +136,102 @@ export default function Home() {
       </footer>
 
       <style jsx global>{`
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(5px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fadeIn { animation: fadeIn 0.3s ease-in-out; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fadeIn { animation: fadeIn 0.3s ease-in-out; }
 
-        /* Efek glitch merah */
-        .glitch-text {
-          position: relative;
-          display: inline-block;
-          text-shadow: 0 0 5px red, 0 0 20px crimson;
-          animation: pulse 2s infinite alternate;
-        }
-        .glitch-text::before,
-        .glitch-text::after {
-          content: attr(data-text);
-          position: absolute;
-          left: 0;
-          top: 0;
-          color: red;
-          overflow: hidden;
-          clip: rect(0, 900px, 0, 0);
-          animation: glitch 2s infinite linear alternate-reverse;
-        }
-        .glitch-text::after {
-          color: #ff0000;
-          text-shadow: 2px 0 #ff3333;
-        }
-        @keyframes glitch {
-          0% { clip: rect(42px, 9999px, 44px, 0); }
-          20% { clip: rect(12px, 9999px, 16px, 0); }
-          40% { clip: rect(85px, 9999px, 90px, 0); }
-          60% { clip: rect(24px, 9999px, 28px, 0); }
-          80% { clip: rect(64px, 9999px, 68px, 0); }
-          100% { clip: rect(12px, 9999px, 16px, 0); }
-        }
+  /* === Efek GLITCH + ANIMASI untuk logo === */
+  .glitch-text {
+    position: relative;
+    display: inline-block;
+    color: #ff1b1b;
+    text-shadow:
+      0 0 10px #ff1b1b,
+      0 0 20px #ff3b3b,
+      0 0 40px #ff5c5c,
+      0 0 80px #ff8080;
+    animation:
+      flicker 2s infinite ease-in-out,
+      shake 1.5s infinite ease-in-out;
+  }
 
-        @keyframes pulse {
-          from { filter: brightness(1); }
-          to { filter: brightness(1.8); }
-        }
+  .glitch-text::before,
+  .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+  }
 
-        /* Efek PETIR */
-        .lightning {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
-          opacity: 0;
-          animation: flash 6s infinite;
-        }
-        .delay-1 { animation-delay: 2s; }
-        .delay-2 { animation-delay: 4s; }
+  .glitch-text::before {
+    color: cyan;
+    z-index: -1;
+    animation: glitchBefore 1s infinite linear alternate-reverse;
+  }
 
-        @keyframes flash {
-          0%, 95%, 100% { opacity: 0; }
-          96% { opacity: 1; }
-          97% { opacity: 0.6; }
-          98% { opacity: 0; }
-          99% { opacity: 0.8; }
-        }
-      `}</style>
+  .glitch-text::after {
+    color: #ff0000;
+    z-index: -1;
+    animation: glitchAfter 1s infinite linear alternate-reverse;
+  }
+
+  @keyframes glitchBefore {
+    0% { transform: translate(0, 0); opacity: 0.4; }
+    20% { transform: translate(-2px, -2px); opacity: 1; }
+    40% { transform: translate(-1px, 2px); opacity: 0.8; }
+    60% { transform: translate(-3px, 1px); opacity: 0.6; }
+    80% { transform: translate(-2px, -1px); opacity: 0.9; }
+    100% { transform: translate(0, 0); opacity: 0.5; }
+  }
+
+  @keyframes glitchAfter {
+    0% { transform: translate(0, 0); opacity: 0.4; }
+    20% { transform: translate(2px, 2px); opacity: 1; }
+    40% { transform: translate(1px, -2px); opacity: 0.8; }
+    60% { transform: translate(3px, -1px); opacity: 0.6; }
+    80% { transform: translate(2px, 1px); opacity: 0.9; }
+    100% { transform: translate(0, 0); opacity: 0.5; }
+  }
+
+  @keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+    20%, 24%, 55% { opacity: 0.5; }
+  }
+
+  @keyframes shake {
+    0% { transform: translate(0px, 0px); }
+    25% { transform: translate(1px, -1px); }
+    50% { transform: translate(-1px, 1px); }
+    75% { transform: translate(1px, 1px); }
+    100% { transform: translate(0px, 0px); }
+  }
+
+  /* Efek PETIR */
+  .lightning {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    opacity: 0;
+    animation: flash 6s infinite;
+  }
+  .delay-1 { animation-delay: 2s; }
+  .delay-2 { animation-delay: 4s; }
+
+  @keyframes flash {
+    0%, 95%, 100% { opacity: 0; }
+    96% { opacity: 1; }
+    97% { opacity: 0.6; }
+    98% { opacity: 0; }
+    99% { opacity: 0.8; }
+  }
+`}</style>
+
     </div>
   )
 }
