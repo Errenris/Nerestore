@@ -114,7 +114,7 @@ export default function Home() {
           {/* === TOMBOL AKSES FREE === */}
           <div className='mt-8'>
             <a
-              href='https://linktr.ee/nerestore.com'
+              href='https://linkbio.co/nerestore'
               target='_blank'
               rel='noreferrer'
               className='relative inline-block px-8 py-3 rounded-full font-semibold text-white text-lg
