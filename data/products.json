@@ -3,17 +3,18 @@
     "id": 1,
     "name": "Canva Pro",
     "options": [
-      { "name": "1 Bulan", "desc": "Akses semua fitur Pro", "price": 4000 },
-      { "name": "3 Bulan", "desc": "Lebih hemat 15%", "price": 6000 },
-      { "name": "1 Tahun", "desc": "Full akses 12 bulan", "price": 10000 }
+      { "name": "1 Bulan pro : 4k", "desc": "Akses semua fitur Pro", "price": 4000 },
+      { "name": "1 Bulan designer : 5k", "desc": "Akses semua fitur Pro & designer", "price": 6000 },
+      { "name": "1 Tahun pro/edu : 10k", "desc": "Akses semua fitur Pro", "price": 10000 }
     ]
   },
   {
     "id": 2,
     "name": "CapCut Pro",
     "options": [
-      { "name": "7 Hari", "desc": "Trial versi Pro", "price": 8000 },
-      { "name": "1 Bulan", "desc": "Full fitur Pro", "price": 15500 }
+      { "name": "7 Hari : 8k", "desc": "Pro", "price": 8000 },
+      { "name": "21 Hari : 8k", "desc": "Pro", "price": 6000 },
+      { "name": "1 Bulan : 20k", "desc": "Pro", "price": 20000 }
     ]
   },
   {
