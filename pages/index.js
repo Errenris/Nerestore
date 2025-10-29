@@ -96,7 +96,18 @@ export default function Home() {
 
       {/* ===== FOOTER ===== */}
       <footer className='bg-gray-100 p-6 mt-10 text-center text-sm text-gray-600'>
-        © {new Date().getFullYear()} Nerestore — Hubungi admin via WhatsApp untuk pemesanan.
+        <p>© {new Date().getFullYear()} Nerestore — Hubungi admin via WhatsApp untuk pemesanan.</p>
+        <p className='mt-2'>
+          🔗{' '}
+          <a
+            href='https://linktr.ee/nerestore.com'
+            target='_blank'
+            rel='noreferrer'
+            className='text-sky-600 hover:underline font-medium'
+          >
+            Akses Gratis / Free Tools di sini
+          </a>
+        </p>
       </footer>
     </div>
   )
