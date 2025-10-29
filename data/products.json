@@ -1,27 +1,27 @@
-[
+export const products = [
   {
-    "id": 1,
-    "name": "Canva Pro",
-    "options": [
-      { "name": "1 Bulan", "desc": "Akses semua fitur Pro", "price": 4000 },
-      { "name": "3 Bulan", "desc": "Lebih hemat 15%", "price": 6000 },
-      { "name": "1 Tahun", "desc": "Full akses 12 bulan", "price": 10000 }
-    ]
+    id: 1,
+    category: "Canva",
+    items: [
+      { name: "1 Bulan pro", desc: "Akses semua fitur Pro", price: 4000 },
+      { name: "1 Bulan designer", desc: "Akses semua fitur pro dan designer", price: 5000 },
+      { name: "1 Tahun pro/edu", desc: "Full akses 12 bulan", price: 10000 },
+    ],
   },
   {
-    "id": 2,
-    "name": "CapCut Pro",
-    "options": [
-      { "name": "7 Hari", "desc": "Trial versi Pro", "price": 8000 },
-      { "name": "1 Bulan", "desc": "Full fitur Pro", "price": 15500 }
-    ]
+    id: 2,
+    category: "CapCut Pro",
+    items: [
+      { name: "7 Hari", desc: "pro", price: 8000 },
+      { name: "21 Hari", desc: "pro", price: 6000 },
+      { name: "1 Bulan", desc: "pro", price: 15500 },
+    ],
   },
   {
-    "id": 3,
-    "name": "Netflix Premium",
-    "options": [
-      { "name": "1 Bulan", "desc": "Akun private 4K", "price": 15000 },
-      { "name": "3 Bulan", "desc": "Langganan hemat", "price": 40000 }
-    ]
-  }
-]
+    id: 3,
+    category: "Netflix Premium",
+    items: [
+      { name: "1 Bulan", desc: "Full akses 4K", price: 25000 },
+    ],
+  },
+];
