@@ -102,14 +102,29 @@ export default function Home() {
         </section>
 
         {/* TENTANG */}
-        <section id='tentang' className='mt-16'>
+        <section id='tentang' className='mt-16 text-center'>
           <h2 className='text-2xl font-bold mb-3 bg-gradient-to-r from-cyan-400 to-pink-400 bg-clip-text text-transparent'>
             Tentang Nerestore
           </h2>
-          <p className='text-gray-300 leading-relaxed'>
+          <p className='text-gray-300 leading-relaxed max-w-2xl mx-auto'>
             <b>Nerestore</b> menjual produk digital seperti Canva, CapCut, Netflix, dan lainnya.
             Semua produk bergaransi dan disertai panduan lengkap agar pembeli nyaman & aman.
           </p>
+
+          {/* === TOMBOL AKSES FREE === */}
+          <div className='mt-8'>
+            <a
+              href='https://linktr.ee/nerestore.com'
+              target='_blank'
+              rel='noreferrer'
+              className='relative inline-block px-8 py-3 rounded-full font-semibold text-white text-lg
+                         bg-gradient-to-r from-cyan-500 via-fuchsia-500 to-purple-500
+                         hover:scale-105 transition-transform duration-300
+                         before:absolute before:inset-0 before:rounded-full before:blur-md before:bg-gradient-to-r before:from-cyan-500 before:via-fuchsia-500 before:to-purple-500 before:opacity-70 hover:before:opacity-100 before:-z-10'
+            >
+              🚀 Akses Gratis / Free Tools
+            </a>
+          </div>
         </section>
       </main>
 
@@ -117,17 +132,6 @@ export default function Home() {
       <footer className='bg-black/70 text-gray-400 text-center py-6 mt-16 border-t border-gray-800'>
         <p>
           © {new Date().getFullYear()} <b className='text-pink-400'>Nerestore</b> — Hubungi admin via WhatsApp.
-        </p>
-        <p className='mt-3'>
-          ⚡{' '}
-          <a
-            href='https://linktr.ee/nerestore.com'
-            target='_blank'
-            rel='noreferrer'
-            className='text-cyan-400 hover:text-white font-medium underline'
-          >
-            Akses Gratis / Free Tools di sini
-          </a>
         </p>
       </footer>
 
