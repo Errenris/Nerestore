@@ -19,7 +19,10 @@ export default function Home() {
       <header className='backdrop-blur-md bg-sky-600/90 text-white sticky top-0 z-50 shadow-md'>
         <div className='container mx-auto flex items-center justify-between p-5'>
           <h1 className='text-3xl font-extrabold tracking-wide'>
-            <span className='bg-gradient-to-r from-white to-sky-200 text-transparent bg-clip-text glitch-text'>
+            <span
+              className='bg-gradient-to-r from-white to-sky-200 text-transparent bg-clip-text glitch-text'
+              data-text='NERESTORE'
+            >
               NERESTORE
             </span>
           </h1>
@@ -148,35 +151,25 @@ export default function Home() {
           content: attr(data-text);
           position: absolute;
           left: 0;
-          text-shadow: -2px 0 red;
           top: 0;
           color: white;
           overflow: hidden;
           clip: rect(0, 900px, 0, 0);
           animation: glitch 2s infinite linear alternate-reverse;
         }
+        .glitch-text::before {
+          text-shadow: -2px 0 red;
+        }
         .glitch-text::after {
           text-shadow: 2px 0 blue;
         }
         @keyframes glitch {
-          0% {
-            clip: rect(42px, 9999px, 44px, 0);
-          }
-          20% {
-            clip: rect(12px, 9999px, 16px, 0);
-          }
-          40% {
-            clip: rect(85px, 9999px, 90px, 0);
-          }
-          60% {
-            clip: rect(24px, 9999px, 28px, 0);
-          }
-          80% {
-            clip: rect(64px, 9999px, 68px, 0);
-          }
-          100% {
-            clip: rect(12px, 9999px, 16px, 0);
-          }
+          0% { clip: rect(42px, 9999px, 44px, 0); }
+          20% { clip: rect(12px, 9999px, 16px, 0); }
+          40% { clip: rect(85px, 9999px, 90px, 0); }
+          60% { clip: rect(24px, 9999px, 28px, 0); }
+          80% { clip: rect(64px, 9999px, 68px, 0); }
+          100% { clip: rect(12px, 9999px, 16px, 0); }
         }
       `}</style>
     </div>
