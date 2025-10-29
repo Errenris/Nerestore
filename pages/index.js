@@ -100,7 +100,7 @@ export default function Home() {
         <p className='mt-2'>
           🔗{' '}
           <a
-            href='https://linktr.ee/nerestore.com'
+            href='https://linkbio.co/nerestore'
             target='_blank'
             rel='noreferrer'
             className='text-sky-600 hover:underline font-medium'
