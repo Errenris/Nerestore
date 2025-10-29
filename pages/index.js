@@ -142,19 +142,34 @@ export default function Home() {
   }
   .animate-fadeIn { animation: fadeIn 0.3s ease-in-out; }
 
-  /* === Efek GLITCH + ANIMASI untuk logo === */
+  /* === GLITCH + RGB GRADIENT animasi === */
   .glitch-text {
     position: relative;
     display: inline-block;
-    color: #ff1b1b;
-    text-shadow:
-      0 0 10px #ff1b1b,
-      0 0 20px #ff3b3b,
-      0 0 40px #ff5c5c,
-      0 0 80px #ff8080;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-shadow: 
+      0 0 10px rgba(255, 0, 0, 0.8),
+      0 0 20px rgba(0, 255, 255, 0.8),
+      0 0 40px rgba(255, 0, 255, 0.8);
+    background: linear-gradient(
+      90deg,
+      red,
+      orange,
+      yellow,
+      green,
+      cyan,
+      blue,
+      violet,
+      red
+    );
+    background-size: 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     animation:
-      flicker 2s infinite ease-in-out,
-      shake 1.5s infinite ease-in-out;
+      rgbFlow 6s linear infinite,
+      shake 1.5s infinite ease-in-out,
+      flicker 2s infinite ease-in-out;
   }
 
   .glitch-text::before,
@@ -163,11 +178,11 @@ export default function Home() {
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0.8;
+    opacity: 0.6;
   }
 
   .glitch-text::before {
-    color: cyan;
+    color: #00ffff;
     z-index: -1;
     animation: glitchBefore 1s infinite linear alternate-reverse;
   }
@@ -178,22 +193,28 @@ export default function Home() {
     animation: glitchAfter 1s infinite linear alternate-reverse;
   }
 
+  @keyframes rgbFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
   @keyframes glitchBefore {
-    0% { transform: translate(0, 0); opacity: 0.4; }
-    20% { transform: translate(-2px, -2px); opacity: 1; }
-    40% { transform: translate(-1px, 2px); opacity: 0.8; }
-    60% { transform: translate(-3px, 1px); opacity: 0.6; }
-    80% { transform: translate(-2px, -1px); opacity: 0.9; }
-    100% { transform: translate(0, 0); opacity: 0.5; }
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(-2px, -2px); }
+    40% { transform: translate(-1px, 2px); }
+    60% { transform: translate(-3px, 1px); }
+    80% { transform: translate(-2px, -1px); }
+    100% { transform: translate(0, 0); }
   }
 
   @keyframes glitchAfter {
-    0% { transform: translate(0, 0); opacity: 0.4; }
-    20% { transform: translate(2px, 2px); opacity: 1; }
-    40% { transform: translate(1px, -2px); opacity: 0.8; }
-    60% { transform: translate(3px, -1px); opacity: 0.6; }
-    80% { transform: translate(2px, 1px); opacity: 0.9; }
-    100% { transform: translate(0, 0); opacity: 0.5; }
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(2px, 2px); }
+    40% { transform: translate(1px, -2px); }
+    60% { transform: translate(3px, -1px); }
+    80% { transform: translate(2px, 1px); }
+    100% { transform: translate(0, 0); }
   }
 
   @keyframes flicker {
@@ -231,7 +252,6 @@ export default function Home() {
     99% { opacity: 0.8; }
   }
 `}</style>
-
     </div>
   )
 }
