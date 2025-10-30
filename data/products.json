@@ -12,8 +12,8 @@
     "id": 2,
     "name": "CapCut Pro",
     "options": [
-      { "name": "7 Hari : 8k", "desc": "Pro", "price": 8000 },
-      { "name": "21 Hari : 6k", "desc": "Pro", "price": 6000 },
+      { "name": "7 Hari : 3,5k", "desc": "Pro", "price": 8000 },
+      { "name": "21 Hari : 7k", "desc": "Pro", "price": 6000 },
       { "name": "1 Bulan : 20k", "desc": "Pro", "price": 20000 }
     ]
   },
